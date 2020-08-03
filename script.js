@@ -1,9 +1,9 @@
 let reddit = {
-    search: function(searchTerm, searchLimit, sortBy) {
-        return fetch(`https://www.reddit.com/search.json?q=${searchTerm}&sort=${sortBy}&limit=${searchLimit}`)
-        .then(res => res.json())
-        .then(data => data.data.children.map(data => data.data))
-        .catch(err => console.log(err));
+    search: function (searchTerm, searchLimit, sortBy) {
+        return fetch(`https://reddit.com/search.json?q=${searchTerm}&sort=${sortBy}&limit=${searchLimit}`)
+            .then(res => res.json())
+            .then(data => data.data.children.map(data => data.data))
+            .catch(err => console.log(err));
     }
 };
 
@@ -54,6 +54,6 @@ function showMessage(message, className) {
 
 function truncateText(text, limit) {
     const shortened = text.indexOf(' ', limit);
-    if(shortened == -1) return text;
+    if (shortened == -1) return text;
     return text.substring(0, shortened);
 }
