@@ -11,7 +11,7 @@ const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
 
 function reloadPage() {
-    location.reload();
+    searchInput.value = "";
 }
 
 searchForm.addEventListener('submit', e => {
