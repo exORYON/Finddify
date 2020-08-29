@@ -10,7 +10,7 @@ let reddit = {
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
 
-function clearInput() {
+function reloadPage() {
     location.reload();
 }
 
