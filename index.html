@@ -13,7 +13,8 @@
 
 <body>
     <nav class="navbar navbar-dark" style="background-color: #d85632;">
-        <div class="container-left"  style="position: relative; margin-left: 5%;" >
+        <div class="container-left" style="position: relative; margin-left: 5%;  cursor: pointer;"
+            onclick="clearInput()">
             <img src="images/logo-white.png" class="mb-2 mr-1" alt="Reddit logo" width="30px">
             <span class="navbar-brand">Finddify</span>
         </div>
@@ -40,18 +41,19 @@
                     <select name="limit" id="limit" class="form-control">
                         <option value="5">5</option>
                         <option value="10">10</option>
-                        <option value="25" selected>25</option>
+                        <option value="25">25</option>
                         <option value="50">50</option>
-                        <option value="100">100</option>
+                        <option value="100" selected>100</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-dark btn-block mt-4" style="background-color: #e75e38ea; border: 1px solid transparent;">Search</button>
+                <button type="submit" class="btn btn-dark btn-block mt-4"
+                    style="background-color: #e75e38ea; border: 1px solid transparent;">Search</button>
             </form>
         </div>
         <div id="results"></div>
-   
+
     </div>
-      
+
     <style>
         .form-check-input {
             color: #832f18;
@@ -62,32 +64,32 @@
         }
 
         input[type='radio']:after {
-        width: 15px;
-        height: 15px;
-        border-radius: 15px;
-        top: -2px;
-        left: -1px;
-        position: relative;
-        background-color: #d1d3d1;
-        content: '';
-        display: inline-block;
-        visibility: visible;
-        border: 2px solid white;
-    }
+            width: 15px;
+            height: 15px;
+            border-radius: 15px;
+            top: -2px;
+            left: -1px;
+            position: relative;
+            background-color: #d1d3d1;
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            border: 2px solid white;
+        }
 
-    input[type='radio']:checked:after {
-        width: 15px;
-        height: 15px;
-        border-radius: 15px;
-        top: -2px;
-        left: -1px;
-        position: relative;
-        background-color: #fa724c;
-        content: '';
-        display: inline-block;
-        visibility: visible;
-        border: 2px solid white;
-    }
+        input[type='radio']:checked:after {
+            width: 15px;
+            height: 15px;
+            border-radius: 15px;
+            top: -2px;
+            left: -1px;
+            position: relative;
+            background-color: #fa724c;
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            border: 2px solid white;
+        }
     </style>
 </body>
 

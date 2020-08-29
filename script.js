@@ -10,6 +10,10 @@ let reddit = {
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
 
+function clearInput() {
+    location.reload();
+}
+
 searchForm.addEventListener('submit', e => {
     const searchTerm = searchInput.value;
     const sortBy = document.querySelector('input[name="sortBy"]:checked').value;
@@ -24,9 +28,7 @@ searchForm.addEventListener('submit', e => {
         results.forEach(
             post => {
                 let image = post.preview ? post.preview.images[0].source.url : 'https://p7.hiclipart.com/preview/758/969/262/reddit-social-media-ico-icon-reddit-free-png-image.jpg';
-                if (post.preview === undefined) {
-                }
-                else {
+                if (post.preview === undefined) {} else {
                     output += `<div class="card">
                 <img class="card-img-top" src="${image}" alt="Card image cap">
                 <div class="card-body">
