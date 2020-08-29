@@ -13,7 +13,7 @@ const searchInput = document.getElementById('search-input');
 searchForm.addEventListener('submit', e => {
     const searchTerm = searchInput.value;
     const sortBy = document.querySelector('input[name="sortBy"]:checked').value;
-    const searchLimit = document.getElementById('limit').value;
+    let searchLimit = document.getElementById('limit').value;
 
     if (searchTerm === '') {
         showMessage('Please add a search term', 'alert-danger');
@@ -24,15 +24,18 @@ searchForm.addEventListener('submit', e => {
         results.forEach(
             post => {
                 let image = post.preview ? post.preview.images[0].source.url : 'https://p7.hiclipart.com/preview/758/969/262/reddit-social-media-ico-icon-reddit-free-png-image.jpg';
-
-                output += `<div class="card">
+                if (post.preview === undefined) {
+                }
+                else {
+                    output += `<div class="card">
                 <img class="card-img-top" src="${image}" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">${post.title}</h5>
                   <p class="card-text">${truncateText(post.selftext, 100)}</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a href="#" class="btn btn-primary">Visit</a>
                 </div>
               </div>`;
+                }
             }
         );
         output += '</div>';

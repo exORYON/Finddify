@@ -7,24 +7,24 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <title>Актёры</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-primary mb-3">
-        <div class="container">
+    <nav class="navbar navbar-dark" style="background-color: #d85632;">
+        <div class="container-left"  style="position: relative; margin-left: 5%;" >
+            <img src="images/logo-white.png" class="mb-2 mr-1" alt="Reddit logo" width="30px">
             <span class="navbar-brand">Finddify</span>
         </div>
     </nav>
 
-    <div id="search-container" class="container">
+    <div id="search-container" class="container mt-3">
         <div id="search" class="card card-body bg-light mb-2">
-            <h4>Search Reddit</h4>
+            <h4>Search on Reddit</h4>
             <form id="search-form">
                 <div class="form-group">
-                    <input type="text" id="search-input" class="form-control mb-3" placeholder="Search anything..">
+                    <input type="text" id="search-input" class="form-control mb-3" placeholder="Type anything..">
                 </div>
                 <div class="form-check form-check-inline">
                     Sort by:
@@ -32,8 +32,8 @@
                     <label class="form-check-label">Top</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input type="radio" name="sortBy" value="new" class="form-check-input">
-                    <label class="form-check-label">Latest</label>
+                    <input type="radio" name="sortBy" value="new" class="form-check-input" style="position: absolute;">
+                    <label class="form-check-label" style="margin-left: 20px;">Latest</label>
                 </div>
                 <h5 class="mt-2">Limit: </h5>
                 <div class="form-group">
@@ -45,11 +45,50 @@
                         <option value="100">100</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-dark btn-block mt-4">Search</button>
+                <button type="submit" class="btn btn-dark btn-block mt-4" style="background-color: #e75e38ea; border: 1px solid transparent;">Search</button>
             </form>
         </div>
         <div id="results"></div>
+   
     </div>
+      
+    <style>
+        .form-check-input {
+            color: #832f18;
+        }
+
+        #search-input {
+            color: #d85632;
+        }
+
+        input[type='radio']:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #d1d3d1;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+
+    input[type='radio']:checked:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #fa724c;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+    </style>
 </body>
 
 </html>
